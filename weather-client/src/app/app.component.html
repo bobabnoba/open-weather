@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<div class=" h-100 d-flex justify-content-center">
+    <div class="jumbotron my-auto">
+        <div class="rounded div-starter">
+            <mat-icon class="weather-icon" aria-hidden="false">thunderstorm</mat-icon>
+            <mat-select  class="country-select" [(value)]="selectedCountryCode">
+                <mat-option value="NL">NL</mat-option>
+            </mat-select>
+            <div class="input-group with-icon rounded" >
+                <input class="form-control rounded" name=suche type=search placeholder=City... autocomplete=off>
+            <i class="fa fa-search"></i>
+        </div>
+        </div>
+    </div>
+</div>

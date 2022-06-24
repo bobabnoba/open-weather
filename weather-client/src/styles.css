@@ -1,4 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css');
+@import "~font-awesome/css/font-awesome.min.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%;
+     background: rgb(9,40,43);
+     background: linear-gradient(127deg, rgba(9,40,43,0.5) 0%, 
+     rgba(78,168,185,0.5) 40%,
+      rgba(158,210,200,0.5) 53%,
+       rgba(221,211,94,0.5) 69%, 
+       rgba(255,145,0,0.5) 100%);
+}
+
+body {
+     margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
