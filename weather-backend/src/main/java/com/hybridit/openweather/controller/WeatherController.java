@@ -23,8 +23,10 @@ public class WeatherController {
                                              @RequestParam String from,
                                              @RequestParam String to,
                                              @RequestParam(required = false, defaultValue = "asc") String sortType) {
+
         LocalDate fromDate = LocalDate.parse(from, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         LocalDate toDate = LocalDate.parse(to, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
         return ResponseEntity.ok(weatherService.getAvgTemperature(cityIds, fromDate, toDate, sortType));
     }
 }
