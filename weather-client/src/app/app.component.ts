@@ -14,7 +14,7 @@ import { map, startWith } from 'rxjs/operators'
 export class AppComponent implements OnInit {
 
   title = 'Open Weather';
-
+  selectedCc! : any;
   cities! : City[];
   countryCodes! : String[];
   selectedCity! : City | undefined;
@@ -49,6 +49,8 @@ export class AppComponent implements OnInit {
 
   selectCity(event: any) {
     this.selectedCity = this.cities.find(c => c.name === event);
+    this.selectedCc = this.countryCodes.find(cc => this.selectedCity!.countryCode === cc)
+    console.log(this.selectedCc);
   }
 
   private _filter(value: string): string[] {
@@ -58,9 +60,10 @@ export class AppComponent implements OnInit {
     )
   }
 
- 
-  selectedCountryCode = "GB"
+  // get this through the api call
   temp = "20"
+
+  // this also
   daysWithTemp = [
     { day: 'FRIDAY', temp: 22 },
     { day: 'SATURDAY', temp: 25 },

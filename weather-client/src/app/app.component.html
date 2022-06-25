@@ -1,11 +1,9 @@
 <div class=" h-100 d-flex justify-content-center">
     <div class="jumbotron my-auto">
-
-        <!-- search bar -->
         <div class=" div-starter">
             <mat-icon class="weather-icon" aria-hidden="false">thunderstorm</mat-icon>
-            <mat-select  class="country-select">
-                <mat-option *ngFor = "let cc of countryCodes" [value] = "cc">{{ cc }}</mat-option>
+            <mat-select  class="country-select" [(value)]="selectedCc">
+                <mat-option *ngFor = "let cc of countryCodes" [value] = "cc" >{{ cc }}</mat-option>
             </mat-select>
             <form>
                 <div class="input-group with-icon rounded" >
