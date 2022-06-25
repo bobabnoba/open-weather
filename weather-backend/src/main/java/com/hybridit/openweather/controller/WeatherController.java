@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.time.LocalDate;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/weather")
 public class WeatherController {

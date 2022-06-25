@@ -4,26 +4,33 @@
         <!-- search bar -->
         <div class=" div-starter">
             <mat-icon class="weather-icon" aria-hidden="false">thunderstorm</mat-icon>
-            <mat-select  class="country-select" [(value)]="selectedCountryCode">
-                <mat-option value="GB">GB</mat-option>
+            <mat-select  class="country-select">
+                <mat-option *ngFor = "let cc of countryCodes" [value] = "cc">{{ cc }}</mat-option>
             </mat-select>
-            <div class="input-group with-icon rounded" >
-                <input class="form-control rounded" name=suche type=search placeholder=City... autocomplete=off>
-            <i class="fa fa-search"></i>
-            </div>
+            <form>
+                <div class="input-group with-icon rounded" >
+                    <input class="form-control rounded" matInput placeholder="City..." [formControl]="searchControl" [matAutocomplete] = "auto">
+                    <mat-autocomplete #auto="matAutocomplete"  (optionSelected)='selectCity($event.option.value)'>
+                        <mat-option *ngFor="let option of filteredOptions | async " [value]="option" >
+                            {{ option }}
+                        </mat-option>
+                    </mat-autocomplete>
+                <i class="fa fa-search"></i>
+                </div>
+            </form>
         </div>
         
-        <!-- results: 10 days avg //// add ngIf -->
+        <div *ngIf="selectedCity">
         <div class = "temp-holder">
             <p class="temp-period">June 25 - 30 2022</p>
             <p class="temp-number">{{ temp }}°C </p>
         </div>
-          <!-- results: days each //// add ngIf -->
           <ul  class="temp-card-holder">
             <li *ngFor="let dwt of daysWithTemp" class="temp-card">
                 <p class="temp-card-day">{{ dwt.day }}</p>
                 <p class="temp-card-number">{{ dwt.temp }}°C</p>
             </li>
           </ul>
+        </div>
     </div>
 </div>
