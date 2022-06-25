@@ -1,14 +1,29 @@
 <div class=" h-100 d-flex justify-content-center">
     <div class="jumbotron my-auto">
-        <div class="rounded div-starter">
+
+        <!-- search bar -->
+        <div class=" div-starter">
             <mat-icon class="weather-icon" aria-hidden="false">thunderstorm</mat-icon>
             <mat-select  class="country-select" [(value)]="selectedCountryCode">
-                <mat-option value="NL">NL</mat-option>
+                <mat-option value="GB">GB</mat-option>
             </mat-select>
             <div class="input-group with-icon rounded" >
                 <input class="form-control rounded" name=suche type=search placeholder=City... autocomplete=off>
             <i class="fa fa-search"></i>
+            </div>
         </div>
+        
+        <!-- results: 10 days avg //// add ngIf -->
+        <div class = "temp-holder">
+            <p class="temp-period">June 25 - 30 2022</p>
+            <p class="temp-number">{{ temp }}°C </p>
         </div>
+          <!-- results: days each //// add ngIf -->
+          <ul  class="temp-card-holder">
+            <li *ngFor="let dwt of daysWithTemp" class="temp-card">
+                <p class="temp-card-day">{{ dwt.day }}</p>
+                <p class="temp-card-number">{{ dwt.temp }}°C</p>
+            </li>
+          </ul>
     </div>
 </div>
