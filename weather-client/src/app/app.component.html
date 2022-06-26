@@ -1,8 +1,8 @@
 <div class=" h-100 d-flex justify-content-center">
     <div class="jumbotron my-auto">
         <div class=" div-starter">
-            <mat-icon class="weather-icon" aria-hidden="false">thunderstorm</mat-icon>
-            <mat-select  class="country-select" [(value)]="selectedCc">
+            <img src="../assets/cloudy.png" class="weather-icon" alt="">
+            <mat-select placeholder="CC" class="country-select" [(value)]="selectedCc">
                 <mat-option *ngFor = "let cc of countryCodes" [value] = "cc" >{{ cc }}</mat-option>
             </mat-select>
             <form>
@@ -20,13 +20,13 @@
         
         <div *ngIf="selectedCity">
         <div class = "temp-holder">
-            <p class="temp-period">June 25 - 30 2022</p>
-            <p class="temp-number">{{ temp }}°C </p>
+            <p class="temp-period">{{ dateRange }} </p>
+            <p class="temp-number">{{ tempFor5Days | number : '.0-0' }}°C </p>
         </div>
           <ul  class="temp-card-holder">
             <li *ngFor="let dwt of daysWithTemp" class="temp-card">
                 <p class="temp-card-day">{{ dwt.day }}</p>
-                <p class="temp-card-number">{{ dwt.temp }}°C</p>
+                <p class="temp-card-number">{{ dwt.temp | number : '.0-0' }}°C</p>
             </li>
           </ul>
         </div>

@@ -16,6 +16,7 @@ html, body {
 }
 .input-group.with-icon>input {
 padding-right: 1.7rem;
+width: 20rem;
 border-color: #bfbcce88;
 }
 
@@ -28,10 +29,8 @@ border-color: #bfbcce88;
 }
 
 .weather-icon {
-  transform: translateY(30%);
-  top: 50%;
-  left: .7rem;
-  margin: 0 0.7rem 0 1rem;
+  width: 2.2rem;
+  margin: 0 0.7rem 0 0.6rem;
 }
 
 .country-select {

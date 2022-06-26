@@ -1,5 +1,6 @@
 package com.hybridit.openweather.controller;
 
+import com.hybridit.openweather.projection.CityWeatherData;
 import com.hybridit.openweather.service.WeatherService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,10 +21,10 @@ public class WeatherController {
     }
 
     @GetMapping("/avg-temperature")
-    public ResponseEntity<Object> getAvgTemp(@RequestParam(required = false) List<Long> cityIds,
-                                             @RequestParam String from,
-                                             @RequestParam String to,
-                                             @RequestParam(required = false, defaultValue = "asc") String sortType) {
+    public ResponseEntity<List<CityWeatherData>> getAvgTemp(@RequestParam(required = false) List<Long> cityIds,
+                                                      @RequestParam String from,
+                                                      @RequestParam String to,
+                                                      @RequestParam(required = false, defaultValue = "asc") String sortType) {
 
         LocalDate fromDate = LocalDate.parse(from, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         LocalDate toDate = LocalDate.parse(to, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
