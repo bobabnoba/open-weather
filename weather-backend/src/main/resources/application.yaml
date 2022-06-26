@@ -10,4 +10,4 @@ spring:
 open-weather-api:
   cities: London, Birmingham, Edinburgh
   url: 'https://api.openweathermap.org/data/2.5/forecast'
-  apiKey: 'aec19c53bc3f9844e808d67abf24f82f'
+  apiKey: ${OPEN_WEATHER_API_KEY}
