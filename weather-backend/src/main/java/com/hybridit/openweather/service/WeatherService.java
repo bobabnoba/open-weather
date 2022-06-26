@@ -22,8 +22,8 @@ public class WeatherService {
         weatherRepository.saveAll(weatherInfo);
     }
 
-    public List<CityWeatherData> getAvgTemperature(List<Long> cityIds, LocalDate from, LocalDate to, String sortType) {
-        Sort sort = sortType.equalsIgnoreCase("desc") ? Sort.by("avgTemperature").descending() : Sort.by("avgTemperature").ascending();
+    public List<CityWeatherData> getAvgTemperature(List<Long> cityIds, LocalDate from, LocalDate to, String order) {
+        Sort sort = order.equalsIgnoreCase("desc") ? Sort.by("avgTemperature").descending() : Sort.by("avgTemperature").ascending();
         return weatherRepository.getAvgTemperature(cityIds, from, to, sort);
     }
 }

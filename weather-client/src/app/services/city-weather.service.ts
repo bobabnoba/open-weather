@@ -14,13 +14,13 @@ export class CityWeatherService {
 
   private apiUrl = environment.apiBaseUrl;
 
-
   getAllCities() : Observable<City[]> {
     return this._http.get<City[]>(`${this.apiUrl}/cities`)
   }
 
   getAvgTemp(cityIds : number[], from : string | null, to : string | null, sortType : String) : Observable<CityAvgTemp[]> {
-    return this._http.get<CityAvgTemp[]>(`${this.apiUrl}/weather/avg-temperature` 
+    return this._http.get<CityAvgTemp[]>(`${this.apiUrl}/weather/` 
     + "?cityIds=" + cityIds[0] + "&from=" + from + "&to=" + to + "&sortBy=" + sortType)
-  }
+  } 
+
 }
