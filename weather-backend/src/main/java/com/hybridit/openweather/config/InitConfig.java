@@ -52,11 +52,6 @@ public class InitConfig {
         };
     }
 
-    @Bean
-    public RestTemplate restTemplate(RestTemplateBuilder builder) {
-        return builder.build();
-    }
-
     private void saveCity() {
         this.forecast.forEach(forecast -> {
             cityService.save(CityMapper.mapForecastToCity(forecast));
@@ -67,5 +62,10 @@ public class InitConfig {
         this.forecast.forEach(forecast -> {
             weatherService.saveWeatherInfo(WeatherMapper.mapForecastToWeather(forecast));
         });
+    }
+
+    @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        return builder.build();
     }
 }

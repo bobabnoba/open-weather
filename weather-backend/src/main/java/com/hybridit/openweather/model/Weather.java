@@ -8,7 +8,7 @@ public class Weather {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDate dateAndTime;
+    private LocalDate date;
     private Double temperature;
     @ManyToOne(fetch = FetchType.LAZY)
     private City city;
@@ -17,7 +17,7 @@ public class Weather {
     }
 
     public Weather(LocalDate dateAndTime, Double temperature, City city) {
-        this.dateAndTime = dateAndTime;
+        this.date = dateAndTime;
         this.temperature = temperature;
         this.city = city;
     }
@@ -26,8 +26,8 @@ public class Weather {
         return id;
     }
 
-    public LocalDate getDateAndTime() {
-        return dateAndTime;
+    public LocalDate getDate() {
+        return date;
     }
 
     public Double getTemperature() {

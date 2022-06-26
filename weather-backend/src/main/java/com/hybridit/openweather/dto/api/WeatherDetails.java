@@ -14,7 +14,4 @@ public class WeatherDetails {
         return main;
     }
 
-    public void setMain(String main) {
-        this.main = main;
-    }
 }

@@ -13,7 +13,4 @@ public class TemperatureDetails {
         return temp;
     }
 
-    public void setTemp(double temp) {
-        this.temp = temp;
-    }
 }

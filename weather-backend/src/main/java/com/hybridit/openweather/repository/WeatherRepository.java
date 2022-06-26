@@ -16,7 +16,7 @@ public interface WeatherRepository extends JpaRepository<Weather, Long> {
     @Query( value = " select avg(w.temperature) as avgTemperature, w.city.id as cityId " +
             " from Weather w " +
             " where (w.city.id IN :cityIds OR :cityIds IS NULL) " +
-            " and (dateAndTime between :from and :to) " +
+            " and (date between :from and :to) " +
             " group by w.city.id")
     List<CityWeatherData> getAvgTemperature(@Param("cityIds") List<Long> cityIds,
                                             @Param("from") LocalDate from,

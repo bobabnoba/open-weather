@@ -2,7 +2,6 @@ spring:
   datasource:
     url: 'jdbc:postgresql://localhost:5432/open-weather'
     username: postgres
-    password: Bleed9
   jpa:
     show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect

@@ -13,16 +13,8 @@ public class WeatherInfo {
         return dt_txt;
     }
 
-    public void setDt_txt(String dt_txt) {
-        this.dt_txt = dt_txt;
-    }
-
     public TemperatureDetails getMain() {
         return main;
-    }
-
-    public void setMain(TemperatureDetails main) {
-        this.main = main;
     }
 
 }

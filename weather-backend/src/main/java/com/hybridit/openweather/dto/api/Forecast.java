@@ -16,15 +16,8 @@ public class Forecast implements Serializable {
         return list;
     }
 
-    public void setList(List<WeatherInfo> list) {
-        this.list = list;
-    }
-
     public CityDetails getCity() {
         return city;
     }
 
-    public void setCity(CityDetails city) {
-        this.city = city;
-    }
 }
